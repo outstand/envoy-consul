@@ -111,11 +111,4 @@ if [ "$1" = 'envoy' ]; then
     set -- su-exec consul:consul "$@"
 fi
 
-if [ "$1" = 'start-proxy' ]; then
-  set -x
-  echo Starting envoy proxy
-
-  consul connect envoy -envoy-version $ENVOY_VERSION -gateway=ingress -http-addr 192.168.65.3:8500 -grpc-addr 192.168.65.3:8502 || true
-else
-  exec "$@"
-fi
+exec "$@"
