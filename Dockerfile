@@ -1,8 +1,8 @@
 FROM consul:1.8.3 as consul
-FROM envoyproxy/envoy-alpine:v1.14.3
+FROM envoyproxy/envoy-alpine:v1.14.2
 LABEL maintainer="Ryan Schlesinger <ryan@outstand.com>"
 
-ENV ENVOY_VERSION 1.14.3
+ENV ENVOY_VERSION 1.14.2
 
 # Create a consul user and group first so the IDs get set the same way, even as
 # the rest of this may change over time.
