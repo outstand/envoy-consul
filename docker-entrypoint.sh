@@ -108,7 +108,7 @@ if [ "$1" = 'envoy' ]; then
         if [ -n "$loglevel" ]; then
                 set -- "$@" --log-level "$loglevel"
         fi
-    set -- su-exec consul:consul "$@"
+    set -- su-exec consul:consul "$@" -envoy-version $ENVOY_VERSION
 fi
 
 exec "$@"
